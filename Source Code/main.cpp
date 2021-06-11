@@ -9,7 +9,6 @@ This program solves the equations for the quantum harmonic oscillator
     Purpose: N/A
     Notes: N/A
 */
-#include <iostream>
 #include "my_lib.h"
 using namespace std;
 
