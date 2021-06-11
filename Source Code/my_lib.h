@@ -24,7 +24,7 @@ double psi(double x,int n) {
     double psi_n[n];
     double x_t = sqrt(m*w/h)*x;
     
-    psi_n[0] = pow(pi,-1.0/4.0)*exp(-0.5*x*x);
+    psi_n[0] = pow((m*w)/(pi*h),1.0/4.0)*exp(-0.5*x_t*x_t);
 
     if (n == 0) {
         return psi_n[n];
@@ -32,9 +32,9 @@ double psi(double x,int n) {
         psi_n[n] = x_t*sqrt(1.0/n)*psi_n[0];
         return psi_n[n]; 
     } else {
-        psi_n[1] = x_t*sqrt(1.0/1.0)*psi_n[0];
+        psi_n[1] = x_t*sqrt(2.0/1.0)*psi_n[0];
         for (int i = 2; i <= n; i++) {
-            psi_n[i] = x_t*sqrt(1.0/i)*psi_n[i-1] - sqrt((i-1)/i)*psi_n[i-2];
+            psi_n[i] = x_t*sqrt(2.0/i)*psi_n[i-1] - sqrt((i-1.0)/double(i))*psi_n[i-2];
         }
         return psi_n[n];
     }

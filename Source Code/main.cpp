@@ -19,7 +19,7 @@ int main()
     file_name.open("test.dat");
     for (int i = -10000; i <= 10000; i++) {
         x = i*0.001;
-        file_name << x <<' '<< psi(x,3) << "\n";
+        file_name << x <<' '<< psi(x,0) << "\n";
     }
     file_name.close();
     return 0;
