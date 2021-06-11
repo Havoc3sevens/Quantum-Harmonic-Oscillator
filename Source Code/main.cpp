@@ -9,13 +9,18 @@ This program solves the equations for the quantum harmonic oscillator
     Notes: N/A
 */
 #include <iostream>
+#include "my_lib.h"
 using namespace std;
-
-/*double psi(double x,int n) {
-
-}*/
 
 int main()
 {
+    double x;
+    ofstream file_name;
+    file_name.open("test.dat");
+    for (int i = -10000; i <= 10000; i++) {
+        x = i*0.001;
+        file_name << x <<' '<< psi(x,3) << "\n";
+    }
+    file_name.close();
     return 0;
 }
