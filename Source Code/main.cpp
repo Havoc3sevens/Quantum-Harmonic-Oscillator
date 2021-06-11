@@ -18,8 +18,9 @@ int psi_n_to_file(int neg_lim, int pos_lim, int n);
 int main()
 {
     double x;
-    int n = 2;
-    psi_n_to_file(-10, 10, n);
+    for (int i = 0; i <= 9; i++) {
+        psi_n_to_file(-10, 10, i);   
+    }
     return 0;
 }
 
