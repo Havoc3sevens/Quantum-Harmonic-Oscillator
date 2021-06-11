@@ -9,5 +9,5 @@ double w = 1.0;
 double h = 1.0;
 double pi = asin(1.0);
 bool fileout = false;
-string filename = "result";
+string filename = "psi";
 /*^^^^^^^^^^^^Global Variables^^^^^^^^^^^^*/

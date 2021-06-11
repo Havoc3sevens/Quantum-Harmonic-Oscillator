@@ -12,15 +12,23 @@ This program solves the equations for the quantum harmonic oscillator
 #include "my_lib.h"
 using namespace std;
 
+int psi_n_to_file(int neg_lim, int pos_lim, int n);
+
 int main()
 {
     double x;
-    ofstream file_name;
-    file_name.open("test.dat");
-    for (int i = -10000; i <= 10000; i++) {
+    int n = 2;
+    psi_n_to_file(-10, 10, n);
+    return 0;
+}
+
+int psi_n_to_file(int neg_lim, int pos_lim, int n) {
+    double x;
+    ofstream OutputFile(filename + "_" + to_string(n)+ ".dat");
+    for (int i = neg_lim*1000; i <= pos_lim*1000; i++) {
         x = i*0.001;
-        file_name << x <<' '<< psi(x,0) << "\n";
+        OutputFile << x <<' '<< psi(x,n) << "\n";
     }
-    file_name.close();
+    OutputFile.close();
     return 0;
 }
